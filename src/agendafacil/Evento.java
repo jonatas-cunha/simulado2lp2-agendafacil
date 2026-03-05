@@ -4,12 +4,12 @@ import java.util.HashMap;
 import java.util.Map;
 
 public abstract class Evento {
-	private String titulo;
-	private String descricao;
-	private String data;
-	private int maxParticipantes;
+	protected String titulo;
+	protected String descricao;
+	protected String data;
+	protected int maxParticipantes;
 	
-	private Map<String, Estudante> participantes;
+	protected Map<String, Estudante> participantes;
 	
 	public Evento(String titulo, String descricao, String data, int maxParticipantes) {
 		this.titulo = titulo;
@@ -40,5 +40,5 @@ public abstract class Evento {
 		return true;
 	}
 	
-	public abstract double gerarPontuacao();
+	public abstract int gerarPontuacao();
 }

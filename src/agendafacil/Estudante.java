@@ -51,8 +51,12 @@ public class Estudante implements Comparable<Estudante> {
 		return email;
 	}
 
-	private int getPontuacao() {
+	public int getPontuacao() {
 		return this.pontuacao;
+	}
+	
+	public void setPontuacao(int nova) {
+		this.pontuacao = nova;
 	}
 	
 }

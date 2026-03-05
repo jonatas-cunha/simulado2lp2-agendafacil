@@ -44,8 +44,10 @@ public class EventoController {
 	};
 	
 	public boolean inscreverParticipanteEmEvento(Estudante e, int idEvento) {
-		if (eventos.get(idEvento) != null) {
-			eventos.get(idEvento).inscreverParticipante(e);
+		Evento evento = eventos.get(idEvento);
+		if (evento != null) {
+			evento.inscreverParticipante(e);
+			e.setPontuacao(evento.gerarPontuacao());
 			return true;
 		}
 		

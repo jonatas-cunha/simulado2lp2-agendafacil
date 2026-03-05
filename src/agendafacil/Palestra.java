@@ -6,7 +6,7 @@ public class Palestra extends Evento {
 	}
 	
 	@Override
-	public double gerarPontuacao() {
+	public int gerarPontuacao() {
 		return 2;
 	};
 }

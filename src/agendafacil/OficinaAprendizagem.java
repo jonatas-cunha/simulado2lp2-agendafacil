@@ -11,11 +11,11 @@ public class OficinaAprendizagem extends Evento {
 	}
 	
 	public String gerarCertificacao() {
-		return "";
+		return "CERTIFICADO: Certificamos que este estudante participou do evento " + super.titulo + ", com duração de " + this.duracaoHoras + " horas.";
 	}
 	
 	@Override
-	public double gerarPontuacao() {
+	public int gerarPontuacao() {
 		if (certificacao) {
 			return duracaoHoras + 10;
 		}

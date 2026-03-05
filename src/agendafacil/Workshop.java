@@ -9,7 +9,7 @@ public class Workshop extends Evento {
 	}
 	
 	@Override
-	public double gerarPontuacao() {
+	public int gerarPontuacao() {
 		return this.duracaoHoras;
 	};
 }
