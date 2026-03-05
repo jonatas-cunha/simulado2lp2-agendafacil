@@ -1,6 +1,6 @@
 package agendafacil;
 
-public class Estudante {
+public class Estudante implements Comparable<Estudante> {
 	private String nome;
 	private String email; //id
 	
@@ -41,8 +41,18 @@ public class Estudante {
 		return "Estudante [nome=" + nome + ", email=" + email + "]";
 	}
 	
+	@Override
+	public int compareTo(Estudante e) {
+		return getPontuacao() - e.getPontuacao();
+	}
+	
+	
 	public String getEmail() {
 		return email;
+	}
+
+	private int getPontuacao() {
+		return this.pontuacao;
 	}
 	
 }

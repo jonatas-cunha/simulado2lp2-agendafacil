@@ -19,9 +19,6 @@ public abstract class Evento {
 		
 		this.participantes = new HashMap<String, Estudante>();
 	}
-
-
-
 	
 	
 	@Override
@@ -30,13 +27,9 @@ public abstract class Evento {
 				+ maxParticipantes + ", participantes=" + participantes + "]";
 	}
 
-
-
-
-
 	public boolean inscreverParticipante(Estudante e) {
 		if (this.participantes.size() == maxParticipantes) {
-			throw new ArrayIndexOutOfBoundsException("O número máximo de vagas já foi atingido!");
+			throw new IllegalArgumentException("O número máximo de vagas já foi atingido!");
 		}
 		
 		if (this.participantes.get(e.getEmail()) != null) {

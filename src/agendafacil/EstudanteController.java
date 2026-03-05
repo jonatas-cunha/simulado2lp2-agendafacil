@@ -1,6 +1,7 @@
 package agendafacil;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -44,10 +45,20 @@ public class EstudanteController {
 	};
 	
 	public String[] listarEstudantes() {
-		ArrayList<String> copia = new ArrayList<String>();
+		ArrayList<Estudante> copiaEstudantes = new ArrayList<Estudante>();
+		
 		for (Estudante e : this.estudantes.values()) {
-			copia.add(e.toString());
+			copiaEstudantes.add(e);
 		}
-		return copia.toArray(new String[0]);
+		
+		Collections.sort(copiaEstudantes);
+		
+		ArrayList<String> nomesEstudantes = new ArrayList<String>();
+		
+		for (Estudante e : copiaEstudantes) {
+			nomesEstudantes.add(e.toString());
+		}
+		
+		return nomesEstudantes.toArray(new String[0]);
 	};
 }
