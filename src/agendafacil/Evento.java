@@ -22,12 +22,18 @@ public abstract class Evento {
 
 
 
+	
+	
 	@Override
 	public String toString() {
-		return "Evento [titulo=" + titulo + ", descricao=" + descricao + ", maxParticipantes=" + maxParticipantes + "]";
+		return "Evento [titulo=" + titulo + ", descricao=" + descricao + ", data=" + data + ", maxParticipantes="
+				+ maxParticipantes + ", participantes=" + participantes + "]";
 	}
-	
-	
+
+
+
+
+
 	public boolean inscreverParticipante(Estudante e) {
 		if (this.participantes.size() == maxParticipantes) {
 			throw new ArrayIndexOutOfBoundsException("O número máximo de vagas já foi atingido!");
